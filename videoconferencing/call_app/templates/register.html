@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-     <style>
+    <style>
         /* Reset some default styles */
         body, h2, form, div, label, input {
             margin: 0;
@@ -125,16 +125,19 @@
         }
         
      </style>
-
-    
 </head>
 <body>
     <div class="form-container">
         <h2>Register</h2>
         <form action="#" method="POST">
+            {% csrf_token %}
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -153,7 +156,7 @@
             </div>
         </form>
         <div class="form-group signin-link">
-            <span>Already have an account? </span><a href="{%url 'login' %}">Sign in</a>
+            <span>Already have an account? </span><a href="{% url 'login' %}">Sign in</a>
         </div>
     </div>
 </body>
