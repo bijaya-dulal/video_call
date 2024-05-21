@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-     <style>
+    <title>Login</title>
+    <style>
+        /* Include the CSS here */
         /* Reset some default styles */
         body, h2, form, div, label, input {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         /* Basic body styling */
         body {
             font-family: Arial, sans-serif;
@@ -21,7 +22,7 @@
             align-items: center;
             height: 100vh;
         }
-        
+
         /* Container styling */
         .form-container {
             background: #fff;
@@ -32,23 +33,23 @@
             max-width: 400px;
             margin: 20px;
         }
-        
+
         h2 {
             margin-bottom: 20px;
             color: #333;
         }
-        
+
         /* Form group styling */
         .form-group {
             margin-bottom: 15px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 5px;
             color: #333;
         }
-        
+
         input[type="text"],
         input[type="email"],
         input[type="password"] {
@@ -58,7 +59,7 @@
             border-radius: 4px;
             font-size: 16px;
         }
-        
+
         input[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -69,52 +70,52 @@
             font-size: 16px;
             cursor: pointer;
         }
-        
+
         input[type="submit"]:hover {
             background: #4cae4c;
         }
-        
+
         /* Sign-in link styling */
         .signin-link {
             text-align: center;
             margin-top: 10px;
         }
-        
+
         .signin-link span {
             color: #333;
         }
-        
+
         .signin-link a {
             color: #5cb85c;
             text-decoration: none;
         }
-        
+
         .signin-link a:hover {
             text-decoration: underline;
         }
-        
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .form-container {
                 padding: 15px;
                 margin: 10px;
             }
-        
+
             h2 {
                 font-size: 24px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .form-container {
                 padding: 10px;
                 margin: 5px;
             }
-        
+
             h2 {
                 font-size: 20px;
             }
-        
+
             input[type="text"],
             input[type="email"],
             input[type="password"],
@@ -123,37 +124,26 @@
                 font-size: 14px;
             }
         }
-        
-     </style>
-
-    
+    </style>
 </head>
 <body>
     <div class="form-container">
-        <h2>Register</h2>
+        <h2>Login</h2>
         <form action="#" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <label for="repeatpassword">Repeat Password</label>
-                <input type="password" id="repeatpassword" name="repeatpassword" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Login">
             </div>
         </form>
         <div class="form-group signin-link">
-            <span>Already have an account? </span><a href="{%url 'login' %}">Sign in</a>
+            <span>Don't have an account? </span><a href="/register/">Sign up</a>
         </div>
     </div>
 </body>
