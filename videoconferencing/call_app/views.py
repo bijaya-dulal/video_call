@@ -8,10 +8,11 @@ def register(request):
 
         if form.is_valid():
             form.save()
-            return render(request, 'login.html',{'success':"registration successful.please login"})
+            messege={'success':"registration successful.please login"}
+            return render(request, 'login.html',messege)
         else:
-            error_messege = form.errors.as_text()
-            return render(request, 'register.html',{'success':error_messege})
+            messege = form.errors.as_text()
+            return render(request, 'register.html',messege)
 
     return render(request,'register.html')
 
