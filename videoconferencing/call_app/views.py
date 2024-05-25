@@ -1,21 +1,11 @@
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
+from .forms import RegisterForm , LoginForm
 from django.contrib import messages 
-from django.contrib.auth import authenticate, login 
+from django.contrib.auth import authenticate, login , logout
+from django.contrib.auth.decorators import login_required
+
 # # Create your views here.
-# def register(request):
-#     if request.method == 'posT':
-#         form = RegisterForm(request.POST)
 
-#         if form.is_valid():
-#             form.save()
-#             messeges={'success':"registration successful.please login"}
-#             return render(request, 'login.html',messeges)
-#         else:
-#             messege = form.errors.as_text()
-#             return render(request, 'register.html',messeges)
-
-#     return render(request,'register.html')
 
 def register(request):
     if request.method == 'POST':
@@ -61,3 +51,7 @@ def login_view(request):
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
+
+@login_required
+def dashboard(request):
+    return render(request,'dashboard.html')
