@@ -24,17 +24,6 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 
-# def login_view (request):
-#     if request.method == "POST":
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-#         user = authenticate(request,username,password)
-#         if user is not None:
-#             login(request,user)
-#             return redirect('/dashboard')
-#         else:
-#             return render(request, 'login.html',)
-#     return render(request,'login.html')
 
 def login_view(request):
     if request.method == "POST":
@@ -55,3 +44,12 @@ def login_view(request):
 @login_required
 def dashboard(request):
     return render(request,'dashboard.html')
+
+def new_meeting_view(request) :
+    pass
+
+def join_meeting_view(request):
+    pass
+
+def video_call(request):
+    return render(request, 'video_call.html',{'name':request.user.first_name})
