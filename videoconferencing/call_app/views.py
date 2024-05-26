@@ -50,6 +50,6 @@ def new_meeting_view(request) :
 
 def join_meeting_view(request):
     pass
-
+@login_required
 def video_call(request):
-    return render(request, 'video_call.html',{'name':request.user.first_name})
+    return render(request, 'videocall.html',{'name':request.user.first_name})
