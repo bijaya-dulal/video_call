@@ -84,11 +84,8 @@
         <div class="button-container">
             <a href="{% url 'meeting' %}">New Meeting</a>
             <a href="{% url 'join_meeting' %}">Join Meeting</a>
-        </div>
-        <form method="post" action="">
-            {% csrf_token %}
-            <button type="submit" class="logout-button">Logout</button>
-        </form>
+            <a href="{% url 'logout' %}">Log Out</a>
+        
     </div>
 </body>
 </html>

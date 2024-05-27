@@ -45,9 +45,10 @@ def login_view(request):
 def dashboard(request):
     return render(request,'dashboard.html')
 
-def new_meeting_view(request) :
-    pass
-
+@login_required
+def logout_view(request):
+    logout(request)
+    return redirect('/login')
 def join_meeting_view(request):
     pass
 @login_required
