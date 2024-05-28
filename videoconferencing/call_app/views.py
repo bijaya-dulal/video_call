@@ -49,8 +49,14 @@ def dashboard(request):
 def logout_view(request):
     logout(request)
     return redirect('/login')
-def join_meeting_view(request):
-    pass
+
+
+def join_call(request):
+    if request.method == 'POST':
+        roomId = request.POST['roomID']
+        return redirect('/meeting?roomID='+roomId)
+    return render(request,'join_room.html')
+
 @login_required
 def video_call(request):
     return render(request, 'videocall.html',{'name':request.user.first_name})
