@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'call_app',
-    'myapp',
+    
 ]
 
 MIDDLEWARE = [
@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'videoconferencing.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+#https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -83,6 +83,24 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# set-up for mysql
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'django_new',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#         'HOST': 'localhost',   # Set to 'localhost' for a local database or to the IP address/domain of your MySQL server
+#         'PORT': '3306',        # Default MySQL port
+#         'OPTIONS': {
+#             'sql_mode': 'traditional',  # Optional: Use traditional SQL mode
+#             'charset': 'utf8mb4',       # Optional: Ensure UTF-8 support
+#         },
+#     }
+# }
 
 
 # Password validation
